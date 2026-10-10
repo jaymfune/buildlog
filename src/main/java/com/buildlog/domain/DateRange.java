@@ -6,7 +6,7 @@ import java.util.Objects;
 public record DateRange(YearMonth start, YearMonth end)  {
     public DateRange {
         // Reject missing start
-        Objects.requireNonNull(start, "Start date cannot be null");
+        Objects.requireNonNull(start, "Start date is null");
 
         // end may be null (ongoing project), so only compare when it exists
         if (end != null && end.isBefore(start)) {
